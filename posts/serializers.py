@@ -4,7 +4,14 @@ from users.serializers import UserSerializer
 
 
 class PostSerializer(ModelSerializer):
-    author = UserSerializer()
     class Meta:
         model = Post
-        fields = ['id', 'title','body','author','created_at','deleted_at']
+        fields = [ 'id','title','body','author','created_at','updated_at']
+
+
+class PostCreateSerializer(ModelSerializer):
+    class Meta:
+        model = Post
+        read_only_fields = ['updated_at','created_at',]
+        fields = [ 'title','body','author','updated_at','created_at',]
+        

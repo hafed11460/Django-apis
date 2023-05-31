@@ -1,1 +1,5 @@
 venv/
+.env
+posts/__pycache__/
+books/__pycache__/
+db.sqlite3
